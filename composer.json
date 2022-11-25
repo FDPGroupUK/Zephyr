@@ -1,0 +1,43 @@
+{
+    "name": "FDPGroupUK/Zephyr",
+    "description": "Minimal Laravel authentication scaffolding with Vue and Tabler.",
+    "keywords": ["laravel", "auth"],
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/FDPGroupUK/Zephyr/issues",
+        "source": "https://github.com/FDPGroupUK/Zephyr"
+    },
+    "authors": [
+        {
+            "name": "Luca Sabato",
+            "email": "luca.s@fdpgroup.co.uk"
+        }
+    ],
+    "require": {
+        "php": "^8.0.2",
+        "illuminate/console": "^9.21",
+        "illuminate/filesystem": "^9.21",
+        "illuminate/support": "^9.21",
+        "illuminate/validation": "^9.21"
+    },
+    "conflict": {
+        "laravel/framework": "<9.37.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "FDPGroupUK\\Zephyr\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "FDPGroupUK\\Zephyr\\ZephyrServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
