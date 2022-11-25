@@ -1,5 +1,5 @@
 {
-    "name": "FDPGroupUK/Zephyr",
+    "name": "fdpgroup/zephyr",
     "description": "Minimal Laravel authentication scaffolding with Vue and Tabler.",
     "keywords": ["laravel", "auth"],
     "license": "MIT",
