@@ -3,7 +3,7 @@ import { computed } from 'vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
-import Alert from '@/Componets/Alert.vue';
+import Alert from '@/Components/Alert.vue';
 
 const props = defineProps({
     status: String,
