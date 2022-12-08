@@ -56,7 +56,7 @@ class InstallCommand extends Command
 
         // Controllers...
         (new Filesystem())->ensureDirectoryExists(app_path('Http/Controllers'));
-        (new Filesystem())->copyDirectory(__DIR__ . '/../../stubs/inertia-common/app/Http/Controllers', app_path('Http/Controllers'));
+        (new Filesystem())->copyDirectory(__DIR__ . '/../../stubs/app/Http/Controllers', app_path('Http/Controllers'));
 
         // Requests...
         (new Filesystem())->ensureDirectoryExists(app_path('Http/Requests'));
@@ -69,7 +69,7 @@ class InstallCommand extends Command
         copy(__DIR__ . '/../../stubs/app/Http/Middleware/HandleInertiaRequests.php', app_path('Http/Middleware/HandleInertiaRequests.php'));
 
         // Views...
-        copy(__DIR__ . '/../../stubs/inertia-vue/resources/views/app.blade.php', resource_path('views/app.blade.php'));
+        copy(__DIR__ . '/../../stubs/resources/views/app.blade.php', resource_path('views/app.blade.php'));
 
         // Components + Pages...
         (new Filesystem())->ensureDirectoryExists(resource_path('js/Components'));
@@ -81,8 +81,8 @@ class InstallCommand extends Command
         (new Filesystem())->copyDirectory(__DIR__ . '/../../stubs/resources/js/Pages', resource_path('js/Pages'));
 
         // Tests...
-        $this->installTests();
-        (new Filesystem())->copyDirectory(__DIR__ . '/../../stubs/inertia-common/tests/Feature', base_path('tests/Feature'));
+        (new Filesystem())->ensureDirectoryExists(base_path('tests/Feature'));
+        (new Filesystem())->copyDirectory(__DIR__ . '/../../stubs/tests/Feature', base_path('tests/Feature'));
 
         // Routes...
         copy(__DIR__ . '/../../stubs/routes/web.php', base_path('routes/web.php'));
@@ -104,18 +104,6 @@ class InstallCommand extends Command
 
         $this->line('');
         $this->components->info('Zephyr scaffolding installed successfully.');
-    }
-
-    /**
-     * Install Zephyr's tests.
-     *
-     * @return void
-     */
-    protected function installTests()
-    {
-        (new Filesystem())->ensureDirectoryExists(base_path('tests/Feature'));
-
-        (new Filesystem())->copyDirectory(__DIR__ . '/../../stubs/tests/Feature', base_path('tests/Feature'));
     }
 
     /**
