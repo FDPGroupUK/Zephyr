@@ -8,8 +8,8 @@ import { Link } from '@inertiajs/inertia-vue3';
       <div class="col-12 col-lg-6 col-xl-4 border-top-wide border-primary d-flex flex-column justify-content-center">
         <div class="container container-tight my-5 px-lg-5">
           <div class="text-center mb-4">
-            <Link href="/">
-                <ApplicationLogo class="navbar-brand navbar-brand-autodark" />
+            <Link href="/" class="navbar-brand navbar-brand-autodark">
+                <ApplicationLogo heigh="36"/>
             </Link>
           </div>
           <h2 class="text-center mb-3">

@@ -100,7 +100,18 @@ class InstallCommand extends Command
         copy(__DIR__ . '/../../stubs/vite.config.js', base_path('vite.config.js'));
         copy(__DIR__ . '/../../stubs/resources/js/app.js', resource_path('js/app.js'));
 
-        $this->runCommands(['npm install', 'npm run build']);
+        // Assets
+        (new Filesystem())->ensureDirectoryExists(base_path('public/assets'));
+        (new Filesystem())->copyDirectory(__DIR__ . '/../../stubs/assets', base_path('public/assets'));
+
+        // Use user's existing package manager if already found (default to npm if not found)
+        if (file_exists(base_path('pnpm-lock.yaml'))) {
+            $this->runCommands(['pnpm install', 'pnpm run build']);
+        } elseif (file_exists(base_path('yarn.lock'))) {
+            $this->runCommands(['yarn install', 'yarn run build']);
+        } else {
+            $this->runCommands(['npm install', 'npm run build']);
+        }
 
         $this->line('');
         $this->components->info('Zephyr scaffolding installed successfully.');
