@@ -4,12 +4,12 @@ import { Link } from '@inertiajs/inertia-vue3';
 </script>
 
 <template>
-    <div class="row g-0 flex-fill">
+    <div class="row g-0 flex-fill bg-white">
       <div class="col-12 col-lg-6 col-xl-4 border-top-wide border-primary d-flex flex-column justify-content-center">
         <div class="container container-tight my-5 px-lg-5">
           <div class="text-center mb-4">
             <Link href="/" class="navbar-brand navbar-brand-autodark">
-                <ApplicationLogo heigh="36"/>
+                <ApplicationLogo />
             </Link>
           </div>
           <h2 class="text-center mb-3">

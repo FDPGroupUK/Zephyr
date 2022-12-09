@@ -4,7 +4,7 @@ import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
-import { Head, useForm } from '@inertiajs/inertia-vue3';
+import { Head, useForm, Link } from '@inertiajs/inertia-vue3';
 import Alert from '@/Components/Alert.vue';
 
 defineProps({
@@ -42,6 +42,7 @@ const submit = () => {
                         required
                         autofocus
                         autocomplete="username"
+                        placeholder="your@email.com"
                     />
 
                     <InputError :message="form.errors.email" />
@@ -56,7 +57,7 @@ const submit = () => {
         </form>
 
         <div class="text-center text-muted mt-3">
-          Forget it, <Link :href="route('login')" >send me back</Link> to the sign in screen.
+          Forget it, <Link :href="route('login')" >send me back</Link> to the log in screen.
         </div>
     </GuestLayout>
 </template>

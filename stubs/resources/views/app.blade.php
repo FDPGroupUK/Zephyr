@@ -6,7 +6,6 @@
 
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
 
-        <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta16/dist/js/tabler.min.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta16/dist/css/tabler.min.css">
 
         <!-- Fonts -->
@@ -17,6 +16,10 @@
             :root {
                 --tblr-font-sans-serif: Inter, -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
             }
+
+            #app {
+                height: 100%;
+            }
         </style>
 
         <!-- Scripts -->
@@ -24,7 +27,7 @@
         @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
         @inertiaHead
     </head>
-    <body class="d-flex flex-column bg-white">
+    <body class="d-flex flex-column theme-light">
         @inertia
     </body>
 </html>

@@ -6,7 +6,7 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
-import Alert from '@/Componets/Alert.vue';
+import Alert from '@/Components/Alert.vue';
 
 defineProps({
     canResetPassword: Boolean,
@@ -45,6 +45,7 @@ const submit = () => {
                     required
                     autofocus
                     autocomplete="username"
+                    placeholder="your@email.com"
                 />
 
                 <InputError :message="form.errors.email" />
@@ -71,6 +72,7 @@ const submit = () => {
                     :hasError="form.errors.password"
                     required
                     autocomplete="current-password"
+                    placeholder="Your Password"
                 />
 
                 <InputError :message="form.errors.password" />

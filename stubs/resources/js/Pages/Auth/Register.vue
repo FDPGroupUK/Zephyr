@@ -40,6 +40,7 @@ const submit = () => {
                         required
                         autofocus
                         autocomplete="name"
+                        placeholder="Your Name"
                     />
 
                     <InputError :message="form.errors.name" />
@@ -55,6 +56,7 @@ const submit = () => {
                         :hasError="form.errors.email"
                         required
                         autocomplete="username"
+                        placeholder="your@email.com"
                     />
 
                     <InputError :message="form.errors.email" />
@@ -70,6 +72,7 @@ const submit = () => {
                         :hasError="form.errors.password"
                         required
                         autocomplete="new-password"
+                        placeholder="Your Password"
                     />
 
                     <InputError :message="form.errors.password" />
@@ -85,6 +88,7 @@ const submit = () => {
                         :hasError="form.errors.password_confirmation"
                         required
                         autocomplete="new-password"
+                        placeholder="Confirm Password"
                     />
 
                     <InputError :message="form.errors.password_confirmation" />
@@ -99,7 +103,7 @@ const submit = () => {
         </form>
 
         <div class="text-center text-muted mt-3">
-          Already have account? <Link :href="route('login')" >Sign in</Link>
+          Already have account? <Link :href="route('login')" >Log in</Link>
         </div>
     </GuestLayout>
 </template>

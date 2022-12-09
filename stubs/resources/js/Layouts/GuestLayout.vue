@@ -9,7 +9,7 @@ import { Link } from '@inertiajs/inertia-vue3';
       <div class="container container-tight py-4">
         <div class="text-center mb-4">
             <Link href="/" class="navbar-brand navbar-brand-autodark">
-                <ApplicationLogo heigh="36"/>
+                <ApplicationLogo />
             </Link>
         </div>
 

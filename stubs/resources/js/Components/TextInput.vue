@@ -1,7 +1,7 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, computed } from 'vue';
 
-defineProps(['modelValue', 'hasError']);
+const props = defineProps(['modelValue', 'hasError']);
 
 defineEmits(['update:modelValue']);
 
