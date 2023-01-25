@@ -8,7 +8,6 @@ use Illuminate\Support\Str;
 use RuntimeException;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Process\PhpExecutableFinder;
-use Symfony\Component\Process\Process;
 
 class InstallCommand extends Command
 {
@@ -34,19 +33,15 @@ class InstallCommand extends Command
     public function handle()
     {
         // Install Inertia...
-        $this->requireComposerPackages(
-            'inertiajs/inertia-laravel:^0.6.3',
-            'laravel/sanctum:^2.8',
-            'tightenco/ziggy:^1.0'
-        );
+        if (! $this->requireComposerPackages('inertiajs/inertia-laravel:^0.6.3', 'laravel/sanctum:^3.2', 'tightenco/ziggy:^1.0')) {
+            return 1;
+        }
 
         // NPM Packages...
         $this->updateNodePackages(function ($packages) {
             return [
-                '@inertiajs/inertia' => '^0.11.0',
-                '@inertiajs/inertia-vue3' => '^0.6.0',
-                '@inertiajs/progress' => '^0.2.7',
-                '@vitejs/plugin-vue' => '^3.0.0',
+                '@inertiajs/vue3' => '^1.0.0',
+                '@vitejs/plugin-vue' => '^4.0.0',
                 '@tabler/core' => '^1.0.0-beta16',
                 'autoprefixer' => '^10.4.12',
                 'postcss' => '^8.4.18',
@@ -151,7 +146,7 @@ class InstallCommand extends Command
      * Installs the given Composer Packages into the application.
      *
      * @param  mixed  $packages
-     * @return void
+     * @return bool
      */
     protected function requireComposerPackages($packages)
     {
@@ -160,7 +155,7 @@ class InstallCommand extends Command
             is_array($packages) ? $packages : func_get_args()
         );
 
-        (new Process($command, base_path(), ['COMPOSER_MEMORY_LIMIT' => '-1']))
+        return ! (new Process($command, base_path(), ['COMPOSER_MEMORY_LIMIT' => '-1']))
             ->setTimeout(null)
             ->run(function ($type, $output) {
                 $this->output->write($output);

@@ -9,8 +9,8 @@ const input = ref(null);
 
 const classes = computed(() =>
     props.hasError
-        ? 'form-control'
-        : 'form-control is-invalid'
+        ? 'form-control is-invalid'
+        : 'form-control'
 );
 
 onMounted(() => {

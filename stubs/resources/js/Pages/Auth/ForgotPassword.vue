@@ -4,7 +4,7 @@ import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
-import { Head, useForm, Link } from '@inertiajs/inertia-vue3';
+import { Head, useForm, Link } from '@inertiajs/vue3';
 import Alert from '@/Components/Alert.vue';
 
 defineProps({

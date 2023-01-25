@@ -1,6 +1,6 @@
 <script setup>
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
-import { Link } from '@inertiajs/inertia-vue3';
+import { Link } from '@inertiajs/vue3';
 </script>
 
 <template>
@@ -22,7 +22,7 @@ import { Link } from '@inertiajs/inertia-vue3';
       </div>
       <div class="col-12 col-lg-6 col-xl-8 d-none d-lg-block">
 
-        <div class="bg-cover h-100 min-vh-100" style="background-image: url(./static/photos/finances-us-dollars-and-bitcoins-currency-money-2.jpg)"></div>
+        <div class="bg-cover h-100 min-vh-100" style="background-image: url('/assets/images/login_bg.jpg')"></div>
       </div>
     </div>
 </template>
