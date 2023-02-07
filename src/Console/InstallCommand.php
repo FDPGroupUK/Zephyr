@@ -85,8 +85,6 @@ class InstallCommand extends Command
         copy(__DIR__ . '/../../stubs/routes/auth.php', base_path('routes/auth.php'));
 
         // "Dashboard" Route...
-        $this->replaceInFile('/home', '/dashboard', resource_path('js/Pages/Welcome.vue'));
-        $this->replaceInFile('Home', 'Dashboard', resource_path('js/Pages/Welcome.vue'));
         $this->replaceInFile('/home', '/dashboard', app_path('Providers/RouteServiceProvider.php'));
 
         // Tailwind / Vite...
