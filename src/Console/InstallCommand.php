@@ -34,7 +34,7 @@ class InstallCommand extends Command
     public function handle()
     {
         // Install Inertia...
-        if (! $this->requireComposerPackages('inertiajs/inertia-laravel:^0.6.3', 'laravel/sanctum:^3.2', 'tightenco/ziggy:^1.0')) {
+        if (! $this->requireComposerPackages('inertiajs/inertia-laravel:^0.6.8', 'laravel/sanctum:^3.2', 'tightenco/ziggy:^1.0')) {
             return 1;
         }
 
@@ -154,11 +154,11 @@ class InstallCommand extends Command
             is_array($packages) ? $packages : func_get_args()
         );
 
-        return ! (new Process($command, base_path(), ['COMPOSER_MEMORY_LIMIT' => '-1']))
+        return (new Process($command, base_path(), ['COMPOSER_MEMORY_LIMIT' => '-1']))
             ->setTimeout(null)
             ->run(function ($type, $output) {
                 $this->output->write($output);
-            });
+            }) === 0;
     }
 
     /**
