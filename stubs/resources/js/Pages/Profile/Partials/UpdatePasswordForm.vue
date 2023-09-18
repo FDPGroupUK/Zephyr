@@ -32,6 +32,7 @@ const updatePassword = () => {
         },
     });
 };
+
 </script>
 
 <template>

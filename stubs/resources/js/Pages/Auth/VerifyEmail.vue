@@ -17,7 +17,10 @@ const submit = () => {
     form.post(route('verification.send'));
 };
 
-const verificationLinkSent = computed(() => props.status === 'verification-link-sent');
+const verificationLinkSent = computed(() =>
+    props.status === 'verification-link-sent'
+);
+
 </script>
 
 <template>

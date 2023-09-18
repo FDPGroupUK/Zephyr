@@ -1,7 +1,11 @@
 <script setup>
 import { ref } from 'vue';
 
-const props = defineProps(['message']);
+const props = defineProps({
+    message: {
+        type: String,
+    },
+});
 
 const close = ref(false);
 </script>

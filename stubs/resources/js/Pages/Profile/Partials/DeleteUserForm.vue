@@ -34,6 +34,7 @@ const closeModal = () => {
 
     form.reset();
 };
+
 </script>
 
 <template>
@@ -80,7 +81,12 @@ const closeModal = () => {
                     <InputError :message="form.errors.password" />
                 </div>
                 <div class="mt-2">
-                    <SecondaryButton @click="confirmingUserDeletion = !confirmingUserDeletion" class="mb-2"> Cancel </SecondaryButton>
+                    <SecondaryButton
+                        @click="confirmingUserDeletion = !confirmingUserDeletion"
+                        class="mb-2"
+                    >
+                        Cancel
+                    </SecondaryButton>
 
                     <DangerButton
                         class="ml-3"

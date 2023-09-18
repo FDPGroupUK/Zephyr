@@ -34,7 +34,13 @@ class InstallCommand extends Command
     public function handle()
     {
         // Install Inertia...
-        if (! $this->requireComposerPackages('inertiajs/inertia-laravel:^0.6.8', 'laravel/sanctum:^3.2', 'tightenco/ziggy:^1.0')) {
+        if (
+            ! $this->requireComposerPackages(
+                'inertiajs/inertia-laravel:^0.6.8',
+                'laravel/sanctum:^3.2',
+                'tightenco/ziggy:^1.0'
+            )
+        ) {
             return 1;
         }
 
@@ -43,10 +49,13 @@ class InstallCommand extends Command
             return [
                 '@inertiajs/vue3' => '^1.0.0',
                 '@vitejs/plugin-vue' => '^4.0.0',
-                '@tabler/core' => '^1.0.0-beta16',
+                '@tabler/core' => '^1.0.0-beta20',
+                '@tabler/icons-vue' => '^2.0.0',
                 'autoprefixer' => '^10.4.12',
                 'postcss' => '^8.4.18',
                 'vue' => '^3.2.41',
+                'tabler-vite-vue' => '^0.1.0',
+                'sass' => '^1.62.1',
             ] + $packages;
         });
 
