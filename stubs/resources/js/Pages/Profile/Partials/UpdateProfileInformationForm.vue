@@ -7,8 +7,12 @@ import { Link, useForm, usePage } from '@inertiajs/vue3';
 import Alert from '@/Components/Alert.vue';
 
 const props = defineProps({
-    mustVerifyEmail: Boolean,
-    status: String,
+    mustVerifyEmail: {
+        type: Boolean,
+    },
+    status: {
+        type: String,
+    },
 });
 
 const user = usePage().props.auth.user;

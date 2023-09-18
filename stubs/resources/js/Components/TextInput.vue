@@ -1,7 +1,15 @@
 <script setup>
 import { onMounted, ref, computed } from 'vue';
 
-const props = defineProps(['modelValue', 'hasError']);
+const props = defineProps({
+    modelValue: {
+        type: String,
+        required: true,
+    },
+    hasError: {
+        type: Boolean,
+    },
+});
 
 defineEmits(['update:modelValue']);
 

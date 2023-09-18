@@ -8,7 +8,9 @@ import { Head, useForm, Link } from '@inertiajs/vue3';
 import Alert from '@/Components/Alert.vue';
 
 defineProps({
-    status: String,
+    status: {
+        type: String,
+    },
 });
 
 const form = useForm({

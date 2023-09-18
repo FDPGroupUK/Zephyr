@@ -9,9 +9,15 @@ import { Head, Link, useForm } from '@inertiajs/vue3';
 import Alert from '@/Components/Alert.vue';
 
 defineProps({
-    canResetPassword: Boolean,
-    canRegister: Boolean,
-    status: String,
+    canRegister: {
+        type: Boolean,
+    },
+    canResetPassword: {
+        type: Boolean,
+    },
+    status: {
+        type: String,
+    },
 });
 
 const form = useForm({

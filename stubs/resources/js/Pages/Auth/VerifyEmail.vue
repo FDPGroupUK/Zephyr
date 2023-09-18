@@ -6,7 +6,9 @@ import { Head, Link, useForm } from '@inertiajs/vue3';
 import Alert from '@/Components/Alert.vue';
 
 const props = defineProps({
-    status: String,
+    status: {
+        type: String,
+    },
 });
 
 const form = useForm({});
